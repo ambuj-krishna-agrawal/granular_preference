@@ -1,0 +1,75 @@
+{
+    "model_map": {
+      "llama_3_2_3b_it": {
+        "huggingface_name": "meta-llama/Llama-3.2-3B-Instruct",
+        "base_url": "http://babel-0-37:8083/v1/completions",
+        "completion_base_url": "http://babel-0-37:8083/v1/completions",
+        "directory_name": "llama_3_2_3b_it",
+        "mode": "vllm",
+        "chat_tuned": false,
+        "active": true
+      },
+      "llama_3_1_8b_it": {
+        "huggingface_name": "meta-llama/Llama-3.1-8B-Instruct",
+        "base_url": "http://babel-0-23:8082/v1/completions",
+        "completion_base_url": "http://babel-0-37:8083/v1/completions",
+        "directory_name": "llama_3_1_8b_it",
+        "mode": "vllm_lib",
+        "active": false
+      },
+      "llama_3_3_70b_it_awq": {
+        "huggingface_name": "ibnzterrell/Meta-Llama-3.3-70B-Instruct-AWQ-INT4",
+        "completion_base_url": "http://babel-0-37:8083/v1/completions",
+        "base_url": "http://babel-0-19:8081/v1",
+        "directory_name": "llama_3_3_70b_it_awq",
+        "mode": "vllm_lib",
+        "active": false
+      },
+      "phi_3_5_vision_instruct": {
+        "huggingface_name": "microsoft/Phi-3.5-vision-instruct",
+        "completion_base_url": "http://babel-1-31:8084/v1/completions",
+        "base_url": "http://babel-1-31:8084/v1/chat/completions",
+        "directory_name": "phi_3_5_vision_instruct",
+        "mode": "vllm",
+        "chat_tuned": true,
+        "active": false
+      },
+      "qwen2_vl_7b_it_awq": {
+        "huggingface_name": "Qwen/Qwen2-VL-7B-Instruct-AWQ",
+        "completion_base_url": "http://babel-0-37:8083/v1/completions",
+        "base_url": "http://babel-0-23:8087/v1/chat/completions",
+        "directory_name": "qwen2_vl_7b_it_awq",
+        "mode": "vllm",
+        "chat_tuned": true,
+        "active": false
+      },
+      "salesforce_blip2_opt_2_7b": {
+        "huggingface_name": "Salesforce/blip2-opt-2.7b",
+        "completion_base_url": "http://babel-4-37:8088/v1/completions",
+        "base_url": "http://babel-4-37:8088/v1/chat/completions",
+        "directory_name": "salesforce_blip2_opt_2_7b",
+        "mode": "vllm",
+        "chat_tuned": true,
+        "active": true
+      }
+    },
+    "model_a": "salesforce_blip2_opt_2_7b",
+    "model_b": "phi_3_5_vision_instruct",
+    "group_id_range": {
+      "start": 1,
+      "end": 1
+    },
+    "re_ranker_config": {
+      "candidate_reranker_num_times": 7,
+      "candidate_reranker_top_p_sampling_threshold": 1.0,
+      "sample_reranker_model_a_threshold": 20.0,
+      "sample_reranker_model_b_threshold": 20.0,
+      "sample_reranker_per_input_limit": 4
+    },
+    "sampler_config":{
+      "pair_num_times": 7
+    },
+    "batch_size": 4,
+    "dataset": "image_in_words",
+    "experiment_pipeline" : "pilot_6"
+  }
